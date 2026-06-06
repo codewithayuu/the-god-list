@@ -13504,14 +13504,202 @@
     ]
   },
   {
-    "id": "🗺️ PROGRESSION ROADMAP",
-    "title": "🗺️ PROGRESSION ROADMAP",
-    "phase": "PHASE 5 — EXPERT",
+    "id": "24",
+    "title": "24 · NETWORK FLOW & MATCHINGS",
+    "phase": "PHASE 6 — MASTER / WORLD-CLASS",
     "subtopics": [
       {
-        "id": "Milestones by Rating (Codeforces)",
-        "title": "Milestones by Rating (Codeforces)",
-        "bullets": []
+        "id": "24.1",
+        "title": "24.1 — Flow Network Fundamentals",
+        "bullets": [
+          "Flow network: directed graph G = (V, E) with source s, sink t, and capacity c(u, v) ≥ 0 on each edge",
+          "Flow f(u, v): satisfies capacity constraint (0 ≤ f(u,v) ≤ c(u,v)) and flow conservation (except s, t)",
+          "Value of flow: |f| = total flow leaving s = total flow arriving at t",
+          "**Residual graph Gf**: for each edge (u,v) with capacity c and flow f:",
+          "Forward residual edge (u,v) with capacity c - f",
+          "Backward residual edge (v,u) with capacity f",
+          "**Augmenting path**: any path from s to t in Gf with positive capacity on all edges",
+          "**Bottleneck**: minimum residual capacity along the augmenting path",
+          "**Max-Flow Min-Cut Theorem**: maximum flow value equals minimum s-t cut capacity",
+          "Cut (S, T): partition of V where s ∈ S and t ∈ T",
+          "Cut capacity: sum of forward edge capacities from S to T (NOT backward)",
+          "This theorem is the cornerstone of all flow algorithms"
+        ]
+      },
+      {
+        "id": "24.2",
+        "title": "24.2 — Ford-Fulkerson Method",
+        "bullets": [
+          "Repeatedly find an augmenting path in the residual graph and send flow",
+          "Augment by bottleneck capacity, update residuals",
+          "Terminates when no augmenting path exists (= max flow found)",
+          "If capacities are integers, terminates in O(max_flow) iterations",
+          "**Not polynomial** if capacities are irrational (Zwick counterexample)",
+          "**Edmonds-Karp refinement**: always find augmenting path via BFS (shortest path in terms of hops)",
+          "Guarantees termination in O(VE) augmentation rounds",
+          "Total time: O(VE²)",
+          "Each augmentation takes O(E) via BFS",
+          "Practical for small graphs but dominated by Dinic's in competition use"
+        ]
+      },
+      {
+        "id": "24.3",
+        "title": "24.3 — Dinic's Algorithm (Primary Algorithm to Know)",
+        "bullets": [
+          "Most practically efficient max-flow algorithm for CP",
+          "**Level graph**: BFS from s in Gf, assign each node its BFS distance from s (level)",
+          "Only edges going from level ℓ to ℓ+1 form the level graph",
+          "**Blocking flow**: flow that saturates at least one edge in every s-t path in the level graph",
+          "**Algorithm**:",
+          "**Time Complexity**:",
+          "General: O(V² × E) — significantly faster in practice",
+          "Unit capacity graphs: O(E × √V) — excellent for bipartite matching",
+          "Graphs with unit capacities (bipartite): O(E × √V)",
+          "**Current Arc Optimization (crucial for speed)**:",
+          "Maintain a pointer `cur[v]` to current edge being tried in DFS",
+          "Skip fully saturated edges without revisiting",
+          "Without this, DFS is O(E) per path instead of amortized O(V) per blocking flow",
+          "**Implementation template**:",
+          "Adding edges: always add forward and backward edge simultaneously (backward has capacity 0 initially)"
+        ]
+      },
+      {
+        "id": "24.4",
+        "title": "24.4 — Push-Relabel Algorithm",
+        "bullets": [
+          "Alternative paradigm: maintains a \"preflow\" (flow conservation may be violated at non-source/sink nodes)",
+          "**Height function h**: h(s) = n, h(t) = 0; for admissible arc (u,v): h(u) = h(v) + 1",
+          "**Excess**: excess[v] = flow in - flow out (non-negative for non-source/sink during algorithm)",
+          "**Push operation**: send excess flow along admissible arc (u,v) where h(u) = h(v) + 1",
+          "**Relabel operation**: when no admissible arc from an excess node, increase its height",
+          "**Generic push-relabel**: O(V² × E)",
+          "**FIFO push-relabel**: O(V³) — process excess nodes in FIFO order",
+          "**Highest-label push-relabel**: O(V² × √E) — practical winner for dense graphs",
+          "**Gap heuristic**: if a height level becomes empty, all nodes above that gap can be relabeled to n",
+          "Drastically speeds up practice; do not skip this",
+          "When to use push-relabel vs Dinic's:",
+          "Dense graphs (E = O(V²)): push-relabel may win",
+          "Sparse graphs / bipartite: Dinic's is usually faster"
+        ]
+      },
+      {
+        "id": "24.5",
+        "title": "24.5 — Minimum Cost Maximum Flow (MCMF)",
+        "bullets": [
+          "Each edge has capacity c(u,v) and cost w(u,v) (cost per unit of flow)",
+          "Goal: find maximum flow with minimum total cost",
+          "**Successive shortest paths algorithm**:",
+          "Find cheapest augmenting path using Bellman-Ford or SPFA (handles negative cost edges in residual)",
+          "Augment along it",
+          "Repeat until max flow is reached",
+          "Time: O(V × E × |max_flow|) — too slow for large flows",
+          "**Potential / Johnson's reweighting** (key optimization):",
+          "Maintain potential h[v] (shortest distance to v in previous iteration)",
+          "Reweight edge (u,v): w'(u,v) = w(u,v) + h[u] - h[v] ≥ 0",
+          "Now use Dijkstra instead of Bellman-Ford → O((V + E) log V) per augmentation",
+          "Reset potentials after each augmentation using new distances",
+          "**SPFA-based MCMF**: simpler, no potential trick, but slower",
+          "Works fine when flow value is small (≤ 10^4) or graph is small",
+          "Modeling tips:",
+          "Reverse edge in MCMF has negative cost: if edge (u→v) has cost w, reverse (v→u) has cost -w",
+          "To avoid sending flow back (which has negative cost), initialize correctly",
+          "Zero-cost flow: can be treated as pure max flow subproblem",
+          "Applications:",
+          "Transportation / assignment with costs",
+          "Scheduling with penalties",
+          "Job assignment minimizing total time"
+        ]
+      },
+      {
+        "id": "24.6",
+        "title": "24.6 — Bipartite Matching",
+        "bullets": [
+          "**Maximum bipartite matching**: largest set of edges with no shared endpoints",
+          "**Augmenting path algorithm (Hungarian, O(VE))**:",
+          "Try to match each left vertex; if unsuccessful, try to find augmenting path via DFS",
+          "Simple to code, correct, but slow for large inputs",
+          "**Hopcroft-Karp Algorithm: O(E × √V)** — covered in detail in 24.7",
+          "**König's Theorem**: in bipartite graph, `max matching = min vertex cover`",
+          "Vertex cover: minimum set of vertices touching all edges",
+          "Construct min vertex cover from max matching via alternating path analysis",
+          "**Maximum independent set in bipartite**: `n - max_matching` (by König)",
+          "**Hall's Marriage Theorem**: perfect matching exists iff for every subset S of left vertices, |N(S)| ≥ |S|",
+          "N(S) = neighborhood of S in right side",
+          "Useful for proving matching existence",
+          "**Deficiency version**: if Hall's condition fails, max matching = n - max_deficiency"
+        ]
+      },
+      {
+        "id": "24.7",
+        "title": "24.7 — Hopcroft-Karp Algorithm (Detailed)",
+        "bullets": [
+          "Finds maximum bipartite matching in O(E × √V)",
+          "**Key insight**: augmenting path length increases monotonically; first √V phases cover all short paths",
+          "**Phase structure**:",
+          "BFS: find all shortest augmenting paths simultaneously (build layered graph)",
+          "Start BFS from all free left vertices simultaneously (multi-source)",
+          "Stop when first layer of free right vertices reached",
+          "This gives shortest augmenting path length (all equal in this phase)",
+          "DFS: find vertex-disjoint augmenting paths along the layered graph",
+          "Each found path increases matching by 1",
+          "Mark saturated edges to avoid reuse",
+          "**Phase count**: O(√V) — after √V phases, all short augmenting paths exhausted; remaining paths are long → few can exist (≤ √V more)",
+          "**Per-phase cost**: O(E) for BFS + O(E) for DFS over all paths found",
+          "**Total**: O(√V × E)",
+          "Implementation:",
+          "dist[] array tracks BFS layers; NIL = -1 (unmatched sentinel)",
+          "Compared to iterative DFS (O(VE)): Hopcroft-Karp is dramatically faster for large bipartite graphs"
+        ]
+      },
+      {
+        "id": "24.8",
+        "title": "24.8 — Flow Modeling Techniques",
+        "bullets": [
+          "**Vertex splitting**: if vertex has capacity, split into v_in → v_out with edge of that capacity",
+          "Original edges become either → v_in or v_out →",
+          "**Virtual source/sink**: add node connected to multiple sources/sinks with ∞ capacity",
+          "**Lower-bound flows**: edge must carry at least L units",
+          "Technique: subtract L from both bounds; adjust supply/demand of endpoints",
+          "New edge: capacity (U - L), original endpoints get supply/demand adjustments",
+          "Add super-source/sink to handle supply/demand imbalances",
+          "**Circulation with demands**: every edge has lower and upper bound; find valid flow",
+          "**Multiple commodities**: separate flows for each commodity (much harder — LP-based for exact)"
+        ]
+      },
+      {
+        "id": "24.9",
+        "title": "24.9 — Flow Applications",
+        "bullets": [
+          "**Network reliability**: max flow = min cut = minimum edges to disconnect s from t",
+          "**Project selection problem (closure problem)**:",
+          "Projects with profit/cost and dependency edges",
+          "Source → project with capacity = profit; project → dependency with ∞; dependency → sink with capacity = cost",
+          "Min cut gives maximum profit selection",
+          "**Baseball elimination**: team i is eliminated if its max wins < some others' current + remaining",
+          "Flow network encoding whether remaining games can be distributed to prevent another team from winning",
+          "**Image segmentation**: pixel nodes connected to s (foreground) and t (background) with weights; between adjacent pixels with smoothness cost",
+          "**Maximum weighted bipartite matching** (when not all edges present): Hungarian algorithm O(n³) or MCMF",
+          "**Disjoint paths**: edge-disjoint paths from s to t = max flow with unit capacities",
+          "Vertex-disjoint paths: vertex-split technique + unit vertex capacities",
+          "**Dilworth's theorem**: in a partial order, min number of chains covering all elements = max antichain size = solved via matching"
+        ]
+      },
+      {
+        "id": "24.10",
+        "title": "24.10 — Advanced Matching Topics",
+        "bullets": [
+          "**Assignment problem**: n workers, n jobs, cost matrix; minimize total cost",
+          "Hungarian algorithm: O(n³)",
+          "MCMF: also O(n³) but different constant",
+          "**Stable matching (Gale-Shapley)**: O(n²)",
+          "Each person has preference list; find stable assignment (no blocking pairs)",
+          "Men propose → O(n) proposals each → O(n²) total",
+          "Result is men-optimal stable matching",
+          "**General (non-bipartite) matching**: Blossom algorithm (Edmonds'), O(V³)",
+          "Handles odd cycles (blossoms) by contracting them",
+          "Important concept: augmenting path in general graph can go through blossoms",
+          "Rarely needed in CP but shows up in specific problems"
+        ]
       }
     ],
     "buckets": [
@@ -13847,201 +14035,155 @@
     ]
   },
   {
-    "id": "24",
-    "title": "24 · NETWORK FLOW & MATCHINGS",
+    "id": "25",
+    "title": "25 · SQUARE ROOT DECOMPOSITION & MO'S ALGORITHM",
     "phase": "PHASE 6 — MASTER / WORLD-CLASS",
     "subtopics": [
       {
-        "id": "24.1",
-        "title": "24.1 — Flow Network Fundamentals",
+        "id": "25.1",
+        "title": "25.1 — Standard √N Decomposition on Arrays",
         "bullets": [
-          "Flow network: directed graph G = (V, E) with source s, sink t, and capacity c(u, v) ≥ 0 on each edge",
-          "Flow f(u, v): satisfies capacity constraint (0 ≤ f(u,v) ≤ c(u,v)) and flow conservation (except s, t)",
-          "Value of flow: |f| = total flow leaving s = total flow arriving at t",
-          "**Residual graph Gf**: for each edge (u,v) with capacity c and flow f:",
-          "Forward residual edge (u,v) with capacity c - f",
-          "Backward residual edge (v,u) with capacity f",
-          "**Augmenting path**: any path from s to t in Gf with positive capacity on all edges",
-          "**Bottleneck**: minimum residual capacity along the augmenting path",
-          "**Max-Flow Min-Cut Theorem**: maximum flow value equals minimum s-t cut capacity",
-          "Cut (S, T): partition of V where s ∈ S and t ∈ T",
-          "Cut capacity: sum of forward edge capacities from S to T (NOT backward)",
-          "This theorem is the cornerstone of all flow algorithms"
+          "Divide n elements into blocks of size B ≈ √n",
+          "Number of blocks: ⌈n / B⌉ ≈ √n",
+          "Precompute aggregate per block (sum, min, max, gcd, etc.) in O(n)",
+          "**Point update**: update element + update its block aggregate: O(1)",
+          "**Range query [l, r]**: up to 2 partial blocks (iterate individually) + O(√n) full blocks: O(√n)",
+          "**Range update + range query**: maintain offset per block (lazy)",
+          "Range update O(√n); point query O(1)",
+          "Optimal block size: B = √n minimizes O(n/B + B); vary B if update/query costs differ",
+          "Advantage over segment tree: simpler code for non-standard operations (e.g., sort a range)",
+          "**Operations segment trees cannot do efficiently but sqrt can**:",
+          "Sort all elements in range",
+          "Range median queries",
+          "Rolling hash over ranges",
+          "Operations with no clean merge function"
         ]
       },
       {
-        "id": "24.2",
-        "title": "24.2 — Ford-Fulkerson Method",
+        "id": "25.2",
+        "title": "25.2 — Sqrt Decomposition — Block Data Structures",
         "bullets": [
-          "Repeatedly find an augmenting path in the residual graph and send flow",
-          "Augment by bottleneck capacity, update residuals",
-          "Terminates when no augmenting path exists (= max flow found)",
-          "If capacities are integers, terminates in O(max_flow) iterations",
-          "**Not polynomial** if capacities are irrational (Zwick counterexample)",
-          "**Edmonds-Karp refinement**: always find augmenting path via BFS (shortest path in terms of hops)",
-          "Guarantees termination in O(VE) augmentation rounds",
-          "Total time: O(VE²)",
-          "Each augmentation takes O(E) via BFS",
-          "Practical for small graphs but dominated by Dinic's in competition use"
+          "**Block-based range sorting**: keep each block sorted + remember changes",
+          "Query: iterate blocks, binary search for frequency",
+          "Update: mark dirty block, resort when needed",
+          "**Square root of queries trick**: answer Q queries in O((Q + N) × √N) by batching",
+          "**Heavy-light by frequency (sqrt partition)**:",
+          "\"Heavy\" values: appear ≥ √n times (at most √n distinct heavy values)",
+          "\"Light\" values: appear < √n times",
+          "Handle heavy and light cases separately → O(√n) per operation",
+          "Used in problems like: count pairs with specific property, special graph algorithms",
+          "**Offline processing with blocks**: group operations into blocks of size √n, process together"
         ]
       },
       {
-        "id": "24.3",
-        "title": "24.3 — Dinic's Algorithm (Primary Algorithm to Know)",
+        "id": "25.3",
+        "title": "25.3 — Mo's Algorithm (Offline Query Processing)",
         "bullets": [
-          "Most practically efficient max-flow algorithm for CP",
-          "**Level graph**: BFS from s in Gf, assign each node its BFS distance from s (level)",
-          "Only edges going from level ℓ to ℓ+1 form the level graph",
-          "**Blocking flow**: flow that saturates at least one edge in every s-t path in the level graph",
+          "**Problem**: Q range queries [l, r]; each can be answered if you can efficiently add/remove endpoints",
+          "**Naive**: O(Q × N) — too slow",
+          "**Mo's key idea**: sort queries to minimize total cursor movement",
+          "**Block decomposition of queries**:",
+          "Block size B = √N (or √(N × Q / Q) = √N optimally)",
+          "Sort by (block(l), r) — primary: block of l; secondary: r ascending",
+          "For odd blocks: sort r descending (Mo's with rollbacks optimization)",
+          "**Cursor movement analysis**:",
+          "Right pointer (r): within one block, moves monotonically → O(N) per block → O(N × √N) total",
+          "Left pointer (l): per query, moves O(B) = O(√N) → O(Q × √N) total",
+          "Total: O((N + Q) × √N)",
+          "**Template**:",
+          "**Add/Remove operations**: must be O(1) or O(log N) for Mo's to be efficient",
+          "**Classic applications**:",
+          "Count distinct elements in [l, r]: maintain frequency array + distinct_count",
+          "Sum of squares of frequencies in [l, r]",
+          "Count elements with frequency exactly k",
+          "Most frequent element in [l, r]"
+        ]
+      },
+      {
+        "id": "25.4",
+        "title": "25.4 — Mo's Algorithm on Trees",
+        "bullets": [
+          "Extend Mo's to path queries on trees",
+          "**Euler tour flattening**:",
+          "Record each node twice: entry (tin[v]) and exit (tout[v])",
+          "Path from u to v (where u is ancestor of v) maps to range [tin[u], tin[v]] in Euler tour",
+          "For general u, v: use LCA; path query spans [tout[u], tin[v]] if LCA(u,v) = u, else two ranges + LCA",
+          "**Standard approach**:",
+          "Flatten tree to 1D Euler array",
+          "Map path (u, v) → range query on Euler array",
+          "Run Mo's on these range queries",
+          "Track whether each node is \"active\" (appears odd times in current window)",
+          "**Time**: O((N + Q) × √N) — same as standard Mo's",
+          "**Tricky case**: LCA of query may need to be handled as an \"extra\" node",
+          "**Applications**:",
+          "Count distinct values on path from u to v",
+          "Sum of function values on tree path",
+          "Queries on paths that are hard with HLD"
+        ]
+      },
+      {
+        "id": "25.5",
+        "title": "25.5 — Mo's with Rollbacks (Mo's on Non-Deletable Structures)",
+        "bullets": [
+          "**Problem**: add operation is easy (O(1)) but remove operation is hard or impossible",
+          "Examples: DSU (merge is easy, split is hard), some monotonic structures",
+          "**Key observation**: in Mo's, left pointer sometimes moves left (adding elements) and sometimes moves right (removing elements)",
+          "**Modified approach**:",
+          "Sort queries so left pointer only moves RIGHT (never needs to remove from left)",
+          "Left pointer starts at block boundary for each block",
+          "Right pointer always moves right",
+          "Within a block: fix right pointer at block end, binary search for optimal left",
+          "Use a stack to \"rollback\" changes to left side",
           "**Algorithm**:",
-          "**Time Complexity**:",
-          "General: O(V² × E) — significantly faster in practice",
-          "Unit capacity graphs: O(E × √V) — excellent for bipartite matching",
-          "Graphs with unit capacities (bipartite): O(E × √V)",
-          "**Current Arc Optimization (crucial for speed)**:",
-          "Maintain a pointer `cur[v]` to current edge being tried in DFS",
-          "Skip fully saturated edges without revisiting",
-          "Without this, DFS is O(E) per path instead of amortized O(V) per blocking flow",
-          "**Implementation template**:",
-          "Adding edges: always add forward and backward edge simultaneously (backward has capacity 0 initially)"
+          "For each block b: set right boundary R = min(end_of_block, n)",
+          "Process queries in this block sorted by r",
+          "Advance r to query's r value (permanent changes)",
+          "Save checkpoint of data structure",
+          "Advance l from block start to query's l (temporary changes using rollback stack)",
+          "Answer query",
+          "Rollback l changes using stack",
+          "**Total time**: O((N + Q) × √N) but with larger constant (rollback overhead)",
+          "**Applications**:",
+          "Count distinct values in range using persistent-like rollback",
+          "DSU queries (can we merge groups and undo?)",
+          "Problems where offline \"add then undo\" is easier than online removal"
         ]
       },
       {
-        "id": "24.4",
-        "title": "24.4 — Push-Relabel Algorithm",
+        "id": "25.6",
+        "title": "25.6 — Mo's Algorithm — Optimizations & Variants",
         "bullets": [
-          "Alternative paradigm: maintains a \"preflow\" (flow conservation may be violated at non-source/sink nodes)",
-          "**Height function h**: h(s) = n, h(t) = 0; for admissible arc (u,v): h(u) = h(v) + 1",
-          "**Excess**: excess[v] = flow in - flow out (non-negative for non-source/sink during algorithm)",
-          "**Push operation**: send excess flow along admissible arc (u,v) where h(u) = h(v) + 1",
-          "**Relabel operation**: when no admissible arc from an excess node, increase its height",
-          "**Generic push-relabel**: O(V² × E)",
-          "**FIFO push-relabel**: O(V³) — process excess nodes in FIFO order",
-          "**Highest-label push-relabel**: O(V² × √E) — practical winner for dense graphs",
-          "**Gap heuristic**: if a height level becomes empty, all nodes above that gap can be relabeled to n",
-          "Drastically speeds up practice; do not skip this",
-          "When to use push-relabel vs Dinic's:",
-          "Dense graphs (E = O(V²)): push-relabel may win",
-          "Sparse graphs / bipartite: Dinic's is usually faster"
+          "**Hilbert curve order**: instead of sqrt blocks, order queries along Hilbert curve",
+          "Better cache locality, reduces constant by ~30-50% in practice",
+          "Assign each query a position on Hilbert curve, sort by that",
+          "Implementation: recursive or formula-based Hilbert curve mapping",
+          "**Block size tuning**:",
+          "Standard: B = √N",
+          "If add/remove costs O(α) and O(β): optimal B = √(N × β / α) or similar",
+          "Adjust based on TL and problem characteristics",
+          "**Fractional cascading variant**: accelerate with precomputed per-block data",
+          "**Mo's with updates (3D Mo's)**:",
+          "Allow point updates + range queries offline",
+          "Sort queries by (l_block, r_block, time)",
+          "O(N^(5/3)) total complexity",
+          "Block size for 3D: N^(2/3) instead of √N"
         ]
       },
       {
-        "id": "24.5",
-        "title": "24.5 — Minimum Cost Maximum Flow (MCMF)",
+        "id": "25.7",
+        "title": "25.7 — Other √N Techniques",
         "bullets": [
-          "Each edge has capacity c(u,v) and cost w(u,v) (cost per unit of flow)",
-          "Goal: find maximum flow with minimum total cost",
-          "**Successive shortest paths algorithm**:",
-          "Find cheapest augmenting path using Bellman-Ford or SPFA (handles negative cost edges in residual)",
-          "Augment along it",
-          "Repeat until max flow is reached",
-          "Time: O(V × E × |max_flow|) — too slow for large flows",
-          "**Potential / Johnson's reweighting** (key optimization):",
-          "Maintain potential h[v] (shortest distance to v in previous iteration)",
-          "Reweight edge (u,v): w'(u,v) = w(u,v) + h[u] - h[v] ≥ 0",
-          "Now use Dijkstra instead of Bellman-Ford → O((V + E) log V) per augmentation",
-          "Reset potentials after each augmentation using new distances",
-          "**SPFA-based MCMF**: simpler, no potential trick, but slower",
-          "Works fine when flow value is small (≤ 10^4) or graph is small",
-          "Modeling tips:",
-          "Reverse edge in MCMF has negative cost: if edge (u→v) has cost w, reverse (v→u) has cost -w",
-          "To avoid sending flow back (which has negative cost), initialize correctly",
-          "Zero-cost flow: can be treated as pure max flow subproblem",
-          "Applications:",
-          "Transportation / assignment with costs",
-          "Scheduling with penalties",
-          "Job assignment minimizing total time"
-        ]
-      },
-      {
-        "id": "24.6",
-        "title": "24.6 — Bipartite Matching",
-        "bullets": [
-          "**Maximum bipartite matching**: largest set of edges with no shared endpoints",
-          "**Augmenting path algorithm (Hungarian, O(VE))**:",
-          "Try to match each left vertex; if unsuccessful, try to find augmenting path via DFS",
-          "Simple to code, correct, but slow for large inputs",
-          "**Hopcroft-Karp Algorithm: O(E × √V)** — covered in detail in 24.7",
-          "**König's Theorem**: in bipartite graph, `max matching = min vertex cover`",
-          "Vertex cover: minimum set of vertices touching all edges",
-          "Construct min vertex cover from max matching via alternating path analysis",
-          "**Maximum independent set in bipartite**: `n - max_matching` (by König)",
-          "**Hall's Marriage Theorem**: perfect matching exists iff for every subset S of left vertices, |N(S)| ≥ |S|",
-          "N(S) = neighborhood of S in right side",
-          "Useful for proving matching existence",
-          "**Deficiency version**: if Hall's condition fails, max matching = n - max_deficiency"
-        ]
-      },
-      {
-        "id": "24.7",
-        "title": "24.7 — Hopcroft-Karp Algorithm (Detailed)",
-        "bullets": [
-          "Finds maximum bipartite matching in O(E × √V)",
-          "**Key insight**: augmenting path length increases monotonically; first √V phases cover all short paths",
-          "**Phase structure**:",
-          "BFS: find all shortest augmenting paths simultaneously (build layered graph)",
-          "Start BFS from all free left vertices simultaneously (multi-source)",
-          "Stop when first layer of free right vertices reached",
-          "This gives shortest augmenting path length (all equal in this phase)",
-          "DFS: find vertex-disjoint augmenting paths along the layered graph",
-          "Each found path increases matching by 1",
-          "Mark saturated edges to avoid reuse",
-          "**Phase count**: O(√V) — after √V phases, all short augmenting paths exhausted; remaining paths are long → few can exist (≤ √V more)",
-          "**Per-phase cost**: O(E) for BFS + O(E) for DFS over all paths found",
-          "**Total**: O(√V × E)",
-          "Implementation:",
-          "dist[] array tracks BFS layers; NIL = -1 (unmatched sentinel)",
-          "Compared to iterative DFS (O(VE)): Hopcroft-Karp is dramatically faster for large bipartite graphs"
-        ]
-      },
-      {
-        "id": "24.8",
-        "title": "24.8 — Flow Modeling Techniques",
-        "bullets": [
-          "**Vertex splitting**: if vertex has capacity, split into v_in → v_out with edge of that capacity",
-          "Original edges become either → v_in or v_out →",
-          "**Virtual source/sink**: add node connected to multiple sources/sinks with ∞ capacity",
-          "**Lower-bound flows**: edge must carry at least L units",
-          "Technique: subtract L from both bounds; adjust supply/demand of endpoints",
-          "New edge: capacity (U - L), original endpoints get supply/demand adjustments",
-          "Add super-source/sink to handle supply/demand imbalances",
-          "**Circulation with demands**: every edge has lower and upper bound; find valid flow",
-          "**Multiple commodities**: separate flows for each commodity (much harder — LP-based for exact)"
-        ]
-      },
-      {
-        "id": "24.9",
-        "title": "24.9 — Flow Applications",
-        "bullets": [
-          "**Network reliability**: max flow = min cut = minimum edges to disconnect s from t",
-          "**Project selection problem (closure problem)**:",
-          "Projects with profit/cost and dependency edges",
-          "Source → project with capacity = profit; project → dependency with ∞; dependency → sink with capacity = cost",
-          "Min cut gives maximum profit selection",
-          "**Baseball elimination**: team i is eliminated if its max wins < some others' current + remaining",
-          "Flow network encoding whether remaining games can be distributed to prevent another team from winning",
-          "**Image segmentation**: pixel nodes connected to s (foreground) and t (background) with weights; between adjacent pixels with smoothness cost",
-          "**Maximum weighted bipartite matching** (when not all edges present): Hungarian algorithm O(n³) or MCMF",
-          "**Disjoint paths**: edge-disjoint paths from s to t = max flow with unit capacities",
-          "Vertex-disjoint paths: vertex-split technique + unit vertex capacities",
-          "**Dilworth's theorem**: in a partial order, min number of chains covering all elements = max antichain size = solved via matching"
-        ]
-      },
-      {
-        "id": "24.10",
-        "title": "24.10 — Advanced Matching Topics",
-        "bullets": [
-          "**Assignment problem**: n workers, n jobs, cost matrix; minimize total cost",
-          "Hungarian algorithm: O(n³)",
-          "MCMF: also O(n³) but different constant",
-          "**Stable matching (Gale-Shapley)**: O(n²)",
-          "Each person has preference list; find stable assignment (no blocking pairs)",
-          "Men propose → O(n) proposals each → O(n²) total",
-          "Result is men-optimal stable matching",
-          "**General (non-bipartite) matching**: Blossom algorithm (Edmonds'), O(V³)",
-          "Handles odd cycles (blossoms) by contracting them",
-          "Important concept: augmenting path in general graph can go through blossoms",
-          "Rarely needed in CP but shows up in specific problems"
+          "**Sqrt on values (frequency partitioning)**:",
+          "Heavy elements: value v with freq[v] ≥ √N (at most √N distinct heavy values)",
+          "Light elements: freq[v] < √N",
+          "Precompute answers involving heavy elements; brute-force light ones",
+          "O(√N) per query in many problems",
+          "**Sqrt on the answer**: binary search where check takes O(√N)",
+          "**Batched offline with blocks**:",
+          "Divide queries into blocks of √Q",
+          "Within each block, apply all updates first, then answer queries using precomputed data",
+          "**Van Emde Boas tree concept**: O(log log U) operations on universe [0, U]",
+          "√U blocks, each of size √U; recursively defined"
         ]
       }
     ],
@@ -14320,161 +14462,6 @@
         ]
       }
     ]
-  },
-  {
-    "id": "25",
-    "title": "25 · SQUARE ROOT DECOMPOSITION & MO'S ALGORITHM",
-    "phase": "PHASE 6 — MASTER / WORLD-CLASS",
-    "subtopics": [
-      {
-        "id": "25.1",
-        "title": "25.1 — Standard √N Decomposition on Arrays",
-        "bullets": [
-          "Divide n elements into blocks of size B ≈ √n",
-          "Number of blocks: ⌈n / B⌉ ≈ √n",
-          "Precompute aggregate per block (sum, min, max, gcd, etc.) in O(n)",
-          "**Point update**: update element + update its block aggregate: O(1)",
-          "**Range query [l, r]**: up to 2 partial blocks (iterate individually) + O(√n) full blocks: O(√n)",
-          "**Range update + range query**: maintain offset per block (lazy)",
-          "Range update O(√n); point query O(1)",
-          "Optimal block size: B = √n minimizes O(n/B + B); vary B if update/query costs differ",
-          "Advantage over segment tree: simpler code for non-standard operations (e.g., sort a range)",
-          "**Operations segment trees cannot do efficiently but sqrt can**:",
-          "Sort all elements in range",
-          "Range median queries",
-          "Rolling hash over ranges",
-          "Operations with no clean merge function"
-        ]
-      },
-      {
-        "id": "25.2",
-        "title": "25.2 — Sqrt Decomposition — Block Data Structures",
-        "bullets": [
-          "**Block-based range sorting**: keep each block sorted + remember changes",
-          "Query: iterate blocks, binary search for frequency",
-          "Update: mark dirty block, resort when needed",
-          "**Square root of queries trick**: answer Q queries in O((Q + N) × √N) by batching",
-          "**Heavy-light by frequency (sqrt partition)**:",
-          "\"Heavy\" values: appear ≥ √n times (at most √n distinct heavy values)",
-          "\"Light\" values: appear < √n times",
-          "Handle heavy and light cases separately → O(√n) per operation",
-          "Used in problems like: count pairs with specific property, special graph algorithms",
-          "**Offline processing with blocks**: group operations into blocks of size √n, process together"
-        ]
-      },
-      {
-        "id": "25.3",
-        "title": "25.3 — Mo's Algorithm (Offline Query Processing)",
-        "bullets": [
-          "**Problem**: Q range queries [l, r]; each can be answered if you can efficiently add/remove endpoints",
-          "**Naive**: O(Q × N) — too slow",
-          "**Mo's key idea**: sort queries to minimize total cursor movement",
-          "**Block decomposition of queries**:",
-          "Block size B = √N (or √(N × Q / Q) = √N optimally)",
-          "Sort by (block(l), r) — primary: block of l; secondary: r ascending",
-          "For odd blocks: sort r descending (Mo's with rollbacks optimization)",
-          "**Cursor movement analysis**:",
-          "Right pointer (r): within one block, moves monotonically → O(N) per block → O(N × √N) total",
-          "Left pointer (l): per query, moves O(B) = O(√N) → O(Q × √N) total",
-          "Total: O((N + Q) × √N)",
-          "**Template**:",
-          "**Add/Remove operations**: must be O(1) or O(log N) for Mo's to be efficient",
-          "**Classic applications**:",
-          "Count distinct elements in [l, r]: maintain frequency array + distinct_count",
-          "Sum of squares of frequencies in [l, r]",
-          "Count elements with frequency exactly k",
-          "Most frequent element in [l, r]"
-        ]
-      },
-      {
-        "id": "25.4",
-        "title": "25.4 — Mo's Algorithm on Trees",
-        "bullets": [
-          "Extend Mo's to path queries on trees",
-          "**Euler tour flattening**:",
-          "Record each node twice: entry (tin[v]) and exit (tout[v])",
-          "Path from u to v (where u is ancestor of v) maps to range [tin[u], tin[v]] in Euler tour",
-          "For general u, v: use LCA; path query spans [tout[u], tin[v]] if LCA(u,v) = u, else two ranges + LCA",
-          "**Standard approach**:",
-          "Flatten tree to 1D Euler array",
-          "Map path (u, v) → range query on Euler array",
-          "Run Mo's on these range queries",
-          "Track whether each node is \"active\" (appears odd times in current window)",
-          "**Time**: O((N + Q) × √N) — same as standard Mo's",
-          "**Tricky case**: LCA of query may need to be handled as an \"extra\" node",
-          "**Applications**:",
-          "Count distinct values on path from u to v",
-          "Sum of function values on tree path",
-          "Queries on paths that are hard with HLD"
-        ]
-      },
-      {
-        "id": "25.5",
-        "title": "25.5 — Mo's with Rollbacks (Mo's on Non-Deletable Structures)",
-        "bullets": [
-          "**Problem**: add operation is easy (O(1)) but remove operation is hard or impossible",
-          "Examples: DSU (merge is easy, split is hard), some monotonic structures",
-          "**Key observation**: in Mo's, left pointer sometimes moves left (adding elements) and sometimes moves right (removing elements)",
-          "**Modified approach**:",
-          "Sort queries so left pointer only moves RIGHT (never needs to remove from left)",
-          "Left pointer starts at block boundary for each block",
-          "Right pointer always moves right",
-          "Within a block: fix right pointer at block end, binary search for optimal left",
-          "Use a stack to \"rollback\" changes to left side",
-          "**Algorithm**:",
-          "For each block b: set right boundary R = min(end_of_block, n)",
-          "Process queries in this block sorted by r",
-          "Advance r to query's r value (permanent changes)",
-          "Save checkpoint of data structure",
-          "Advance l from block start to query's l (temporary changes using rollback stack)",
-          "Answer query",
-          "Rollback l changes using stack",
-          "**Total time**: O((N + Q) × √N) but with larger constant (rollback overhead)",
-          "**Applications**:",
-          "Count distinct values in range using persistent-like rollback",
-          "DSU queries (can we merge groups and undo?)",
-          "Problems where offline \"add then undo\" is easier than online removal"
-        ]
-      },
-      {
-        "id": "25.6",
-        "title": "25.6 — Mo's Algorithm — Optimizations & Variants",
-        "bullets": [
-          "**Hilbert curve order**: instead of sqrt blocks, order queries along Hilbert curve",
-          "Better cache locality, reduces constant by ~30-50% in practice",
-          "Assign each query a position on Hilbert curve, sort by that",
-          "Implementation: recursive or formula-based Hilbert curve mapping",
-          "**Block size tuning**:",
-          "Standard: B = √N",
-          "If add/remove costs O(α) and O(β): optimal B = √(N × β / α) or similar",
-          "Adjust based on TL and problem characteristics",
-          "**Fractional cascading variant**: accelerate with precomputed per-block data",
-          "**Mo's with updates (3D Mo's)**:",
-          "Allow point updates + range queries offline",
-          "Sort queries by (l_block, r_block, time)",
-          "O(N^(5/3)) total complexity",
-          "Block size for 3D: N^(2/3) instead of √N"
-        ]
-      },
-      {
-        "id": "25.7",
-        "title": "25.7 — Other √N Techniques",
-        "bullets": [
-          "**Sqrt on values (frequency partitioning)**:",
-          "Heavy elements: value v with freq[v] ≥ √N (at most √N distinct heavy values)",
-          "Light elements: freq[v] < √N",
-          "Precompute answers involving heavy elements; brute-force light ones",
-          "O(√N) per query in many problems",
-          "**Sqrt on the answer**: binary search where check takes O(√N)",
-          "**Batched offline with blocks**:",
-          "Divide queries into blocks of √Q",
-          "Within each block, apply all updates first, then answer queries using precomputed data",
-          "**Van Emde Boas tree concept**: O(log log U) operations on universe [0, U]",
-          "√U blocks, each of size √U; recursively defined"
-        ]
-      }
-    ],
-    "buckets": []
   },
   {
     "id": "26",
@@ -15084,13 +15071,6 @@
         ]
       }
     ],
-    "buckets": []
-  },
-  {
-    "id": "📚 RECOMMENDED PRACTICE ORDER (Platforms)",
-    "title": "📚 RECOMMENDED PRACTICE ORDER (Platforms)",
-    "phase": "PHASE 6 — MASTER / WORLD-CLASS",
-    "subtopics": [],
     "buckets": []
   }
 ]

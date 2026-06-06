@@ -1,0 +1,271 @@
+[
+  {
+    "id": "01",
+    "title": "01 · GREEDY",
+    "buckets": [
+      "Bucket 1: The Intuition Phase (Rating: 800–1200)",
+      "Bucket 2: Core Mechanics & Custom Sorting (Rating: 1200–1600)",
+      "Bucket 3: Advanced Proofs & Edge Cases (Rating: 1600–1800)"
+    ]
+  },
+  {
+    "id": "02",
+    "title": "02 · MATH / DISCRETE MATH",
+    "buckets": [
+      "Bucket 1: The Mechanics (Rating: 800–1200)",
+      "Bucket 2: Clever Applications & Modular Inverses (Rating: 1200–1600)",
+      "Bucket 1: Pure GCD/LCM Mechanics (Rating: 800–1300)",
+      "Bucket 2: Embedded Logic & Multiples (Rating: 1200–1500)",
+      "Bucket 1: Sieve Construction & SPF Basics (Rating: 900–1400)",
+      "Bucket 2: Fast Factorization, Prime Counting & SPF Queries (Rating: 1400–1800)",
+      "Bucket 1: Combinatorial Fluency (Rating: 1000–1400)",
+      "Bucket 2: Combinatorial Insight & Classic Forms (Rating: 1400–1700)",
+      "Bucket 1: Intro to Symmetries & Monovariants (Rating: 1000–1400)",
+      "Bucket 2: Advanced Invariants & Impossibility Proofs (Rating: 1500–1800)"
+    ]
+  },
+  {
+    "id": "03",
+    "title": "03 · BINARY SEARCH",
+    "buckets": [
+      "Bucket 1: The Syntax & Sorted Variants (Rating: 800–1200)",
+      "Bucket 2: Binary Search on Answer (Rating: 1200–1700)",
+      "Bucket 3: The Predicate Gauntlet (Rating: 1700–2000)"
+    ]
+  },
+  {
+    "id": "04",
+    "title": "04 · PREFIX SUMS",
+    "buckets": [
+      "Bucket 1: 1D Prefix Sums & Subarray Precomputations (Rating: 800–1200)",
+      "Bucket 2: 2D Prefix Sums & Difference Arrays (Rating: 1200–1500)",
+      "Bucket 3: Prefix XOR, Hashing & Combined Applications (Rating: 1400–1700)"
+    ]
+  },
+  {
+    "id": "05",
+    "title": "05 · TWO POINTERS",
+    "buckets": [
+      "Bucket 1: Two Pointers & Sorted Arrays (Rating: 800–1200)",
+      "Bucket 2: Fixed & Variable Sliding Windows (Rating: 1000–1500)",
+      "Bucket 3: Advanced Windows & Frequency Maps (Rating: 1400–1700)"
+    ]
+  },
+  {
+    "id": "06",
+    "title": "06 · BIT MANIPULATION",
+    "buckets": [
+      "Bucket 1: Core Tricks & XOR Fundamentals (Rating: 800–1200)",
+      "Bucket 2: Subset Enumeration & Bitmask Applications (Rating: 1300–1600)",
+      "Bucket 3: Advanced XOR, Basis Preview & Hard Bitmask DP (Rating: 1700–1900)"
+    ]
+  },
+  {
+    "id": "07",
+    "title": "07 · BASIC DATA STRUCTURES",
+    "buckets": [
+      "Bucket 1: Stacks, Queues & Priority Queues (Rating: 1000–1500)",
+      "Bucket 2: Monotonic Stacks (Rating: 1300–1800)",
+      "Bucket 3: Monotonic Deques & Sliding Window Extrema (Rating: 1500–1900)",
+      "Bucket 4: Sparse Tables & RMQ Applications (Rating: 1600–2000)"
+    ]
+  },
+  {
+    "id": "08",
+    "title": "08 · BFS / DFS",
+    "buckets": [
+      "Bucket 1: Fundamental Traversals on Grids & Graphs (Rating: 1000–1500)",
+      "Bucket 2: CC, Bipartite & Multi-Source BFS (Rating: 1200–1700)",
+      "Bucket 3: Topological Sort & DAGs (Rating: 1500–1900)",
+      "Bucket 4: Eulerian Paths, State-BFS & Hard Modeling (Rating: 1800–2100)"
+    ]
+  },
+  {
+    "id": "09",
+    "title": "09 · BASIC DYNAMIC PROGRAMMING",
+    "buckets": [
+      "Bucket 1: Linear 1D DP & State Transitions (Rating: 1200–1600) — 22 Problems",
+      "Bucket 2: 0/1 Knapsack & Variants (Rating: 1400–1800) — 16 Problems",
+      "Bucket 3: Unbounded Knapsack (Rating: 1400–1700) — 12 Problems",
+      "Bucket 4: LCS, Edit Distance & String DP (Rating: 1500–1900) — 15 Problems",
+      "Bucket 5: DP on Grids (Rating: 1500–1800) — 13 Problems",
+      "Bucket 6: Interval DP Introduction (Rating: 1800–2200) — 12 Problems"
+    ]
+  },
+  {
+    "id": "10",
+    "title": "10 · DISJOINT SET UNION (DSU / UNION-FIND)",
+    "buckets": [
+      "Bucket 1: Core DSU, Cycle Detection & Components (Rating: 1400–1800) — 20 Problems",
+      "Bucket 2: Weighted, Parity & Bipartite DSU (Rating: 1700–2100) — 20 Problems",
+      "Bucket 3: Rollback DSU, Reverse DSU & Offline Connectivity (Rating: 2000–2200) — 15 Problems"
+    ]
+  },
+  {
+    "id": "11",
+    "title": "11 · FENWICK TREE (BINARY INDEXED TREE / BIT)",
+    "buckets": [
+      "Bucket 1: Core Mechanics, Prefix Queries & Point Updates (Rating: 1500–1800) — 15 Problems",
+      "Bucket 2: Range Updates, 2D Grids & Inversions (Rating: 1700–2000) — 18 Problems",
+      "Bucket 3: Order Statistics, Binary Lifting & Sweep Line (Rating: 2000–2200) — 15 Problems"
+    ]
+  },
+  {
+    "id": "12",
+    "title": "12 · SEGMENT TREE",
+    "buckets": [
+      "Bucket 1: Point Update & Range Queries (Rating: 1600–1900) — 20 Problems",
+      "Bucket 2: Lazy Propagation (Rating: 1800–2300) — 25 Problems",
+      "Bucket 3: Merge Sort Tree & Persistent Segment Tree (Rating: 2000–2400) — 12 Problems",
+      "Bucket 4: Segment Tree Beats & Walking (Rating: 1800–2400) — 10 Problems"
+    ]
+  },
+  {
+    "id": "13",
+    "title": "13 · DIJKSTRA & 0-1 BFS",
+    "buckets": [
+      "Bucket 1: Standard Dijkstra & Path Reconstruction (Rating: 1500–1900) — 18 Problems",
+      "Bucket 2: 0-1 BFS, Bellman-Ford & Floyd-Warshall (Rating: 1500–2100) — 19 Problems",
+      "Bucket 3: Dijkstra with State, Layered Graphs & Constraints (Rating: 1700–2200) — 18 Problems"
+    ]
+  },
+  {
+    "id": "14",
+    "title": "14 · MINIMUM SPANNING TREE (MST)",
+    "buckets": [
+      "Bucket 1: Standard Kruskal/Prim & Virtual Nodes (Rating: 1500–1800) — 16 Problems",
+      "Bucket 2: Minimax Paths, Kruskal Reconstruction & Borůvka (Rating: 1800–2100) — 14 Problems",
+      "Bucket 3: Advanced Properties, Bridges & Binary Lifting (Rating: 2100–2300) — 12 Problems"
+    ]
+  },
+  {
+    "id": "15",
+    "title": "15 · TREE ALGORITHMS & LCA",
+    "buckets": [
+      "Bucket 1: Tree DP & Rerooting (Rating: 1700–2000) — 18 Problems",
+      "Bucket 2: LCA, Binary Lifting & Euler Tours (Rating: 1800–2200) — 18 Problems",
+      "Bucket 3: Heavy-Light Decomposition (HLD) (Rating: 2000–2500) — 15 Problems",
+      "Bucket 4: Centroid Decomposition (Rating: 2200–2600) — 12 Problems",
+      "Bucket 5: Small-to-Large (DSU on Tree) & Virtual Trees (Rating: 2300–2700) — 12 Problems"
+    ]
+  },
+  {
+    "id": "16",
+    "title": "16 · NUMBER THEORY",
+    "buckets": [
+      "Bucket 1: Modular Inverse, Fermat's & Extended Euclidean (Rating: 1500–1900)",
+      "Bucket 2: Euler's Totient, CRT & Diophantine Equations (Rating: 1800–2200)",
+      "Bucket 3: Möbius Inversion & Multiplicative Sieves (Rating: 2000–2400)",
+      "Bucket 4: Miller-Rabin, Pollard's Rho, BSGS & Tonelli-Shanks (Rating: 2200–2700)"
+    ]
+  },
+  {
+    "id": "17",
+    "title": "17 · STRING ALGORITHMS",
+    "buckets": [
+      "Bucket 1: Polynomial Rolling Hash (Rating: 1500–1900)",
+      "Bucket 2: KMP and Z-Algorithm (Rating: 1700–2100)",
+      "Bucket 3: Trie (Prefix Tree) (Rating: 1700–2000)",
+      "Bucket 4: Aho-Corasick (Rating: 2000–2400)",
+      "Bucket 5: Manacher's Algorithm (Rating: 1900–2300)",
+      "Bucket 6: Suffix Array + LCP (Kasai's) (Rating: 2200–2700)",
+      "Bucket 7: Suffix Automaton (SAM) (Rating: 2400–2800)"
+    ]
+  },
+  {
+    "id": "18",
+    "title": "18 · ADVANCED DYNAMIC PROGRAMMING",
+    "buckets": [
+      "Bucket 1: Digit DP (Rating: 1800–2300)",
+      "Bucket 2: Bitmask DP (TSP, Assignment) (Rating: 1900–2400)",
+      "Bucket 3: SOS DP (Sum Over Subsets) (Rating: 2100–2500)",
+      "Bucket 4: Tree DP with Complex State & Rerooting (Rating: 2000–2500)",
+      "Bucket 5: DP Optimizations (CHT, D&C, Knuth's, Monotone Queue) (Rating: 2200–2800)",
+      "Bucket 6: Profile DP and Probability DP (Rating: 2300–2800)"
+    ]
+  },
+  {
+    "id": "19",
+    "title": "19 · SCC / BRIDGES / ARTICULATION POINTS",
+    "buckets": [
+      "Bucket 1: Tarjan's SCC, Kosaraju & Condensation DAG (Rating: 2000–2300)",
+      "Bucket 2: Bridges, Articulation Points & Block-Cut Tree (Rating: 2000–2400)",
+      "Bucket 3: 2-SAT & Advanced Implication Graph Modeling (Rating: 2200–2700)"
+    ]
+  },
+  {
+    "id": "20",
+    "title": "20 · COMBINATORICS",
+    "buckets": [
+      "Bucket 1: Binomial Coefficients, Lucas' Theorem & Modulo Factorials (Rating: 1700–2100)",
+      "Bucket 2: Principle of Inclusion-Exclusion (PIE) (Rating: 2000–2500)",
+      "Bucket 3: Stirling, Catalan & Burnside's Lemma (Rating: 2000–2800)",
+      "Bucket 4: Generating Functions & FFT/NTT (Rating: 2400–2900)"
+    ]
+  },
+  {
+    "id": "21",
+    "title": "21 · CONSTRUCTIVE ALGORITHMS",
+    "buckets": [
+      "Bucket 1: Simple Constructions & Array Balancing (Rating: 1400–1800)",
+      "Bucket 2: Invariants, Parity Arguments & Trees (Rating: 1800–2300)",
+      "Bucket 3: Advanced Constructions (De Bruijn, Gray Codes) (Rating: 2300–2600)"
+    ]
+  },
+  {
+    "id": "22",
+    "title": "22 · PROBABILITY",
+    "buckets": [
+      "Bucket 1: Expected Value & Linearity of Expectation (Rating: 1800–2100)",
+      "Bucket 2: Expected Value DP & Absorbing Markov Chains (Rating: 1900–2400)",
+      "Bucket 3: Advanced Probabilistic Modeling & Combinatorics (Rating: 2400–2700)"
+    ]
+  },
+  {
+    "id": "23",
+    "title": "23 · GAME THEORY",
+    "buckets": [
+      "Bucket 1: Nim, Sprague-Grundy & Mex Computation (Rating: 1800–2200)",
+      "Bucket 2: Game Variants, Wythoff, Staircase & DAGs (Rating: 2200–2600)",
+      "Bucket 3: Composite Games & Disguised Game Theory (Rating: 2400–2700)"
+    ]
+  },
+  {
+    "id": "🗺️ PROGRESSION ROADMAP",
+    "title": "🗺️ PROGRESSION ROADMAP",
+    "buckets": [
+      "Bucket 1: Max Flow & Bipartite Matching (Rating: 2100–2500)",
+      "Bucket 2: Min Cost Max Flow (MCMF) (Rating: 2300–2700)",
+      "Bucket 3: Min-Cut Applications, Project Selection & König's (Rating: 2200–2900)"
+    ]
+  },
+  {
+    "id": "24",
+    "title": "24 · NETWORK FLOW & MATCHINGS",
+    "buckets": [
+      "Bucket 1: Basic Sqrt Decomposition & Heavy-Light by Frequency (Rating: 2000–2400)",
+      "Bucket 2: Mo's Algorithm (Standard, Rollback, on Trees) (Rating: 2100–2500)",
+      "Bucket 3: Mo's with Updates (3D Mo's) & Block Decomposition on Trees (Rating: 2200–2800)"
+    ]
+  },
+  {
+    "id": "25",
+    "title": "25 · SQUARE ROOT DECOMPOSITION & MO'S ALGORITHM",
+    "buckets": []
+  },
+  {
+    "id": "26",
+    "title": "26 · COMPUTATIONAL GEOMETRY",
+    "buckets": []
+  },
+  {
+    "id": "27",
+    "title": "27 · SPECIALIZED TREE & QUERY TECHNIQUES",
+    "buckets": []
+  },
+  {
+    "id": "28",
+    "title": "28 · ADVANCED MATH EXTENSIONS",
+    "buckets": []
+  }
+]
