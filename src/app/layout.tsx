@@ -1,9 +1,9 @@
-import type { Metadata } from 'next';
-import './globals.css';
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'Conqueror Syllabus',
-  description: 'Master Competitive Programming',
+  title: "Conquerors",
+  description: "Master Competitive Programming",
 };
 
 export default function RootLayout({
