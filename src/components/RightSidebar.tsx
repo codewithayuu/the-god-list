@@ -22,32 +22,45 @@ interface RightSidebarProps {
   onClose: () => void;
 }
 
-export function RightSidebar({
-  topic,
-  completedProblems,
-  toggleProblem,
-  onClose,
-}: RightSidebarProps) {
+export function RightSidebar({ topic, completedProblems, toggleProblem, onClose }: RightSidebarProps) {
   const [width, setWidth] = useState(380);
+  const widthRef = useRef(380);
   const isResizing = useRef(false);
+
+  useEffect(() => {
+    const savedWidth = localStorage.getItem('conqueror_rsWidth');
+    if (savedWidth) {
+      const parsed = Number(savedWidth);
+      if (parsed >= 250 && parsed <= 800) {
+        setWidth(parsed);
+        widthRef.current = parsed;
+      }
+    }
+  }, []);
 
   const startResizing = useCallback((e: React.MouseEvent) => {
     isResizing.current = true;
-    document.body.style.cursor = "ew-resize";
-    document.body.style.userSelect = "none";
+    document.body.style.cursor = 'ew-resize';
+    document.body.style.userSelect = 'none'; // Prevent text selection while dragging
   }, []);
 
   const stopResizing = useCallback(() => {
+    if (isResizing.current) {
+      localStorage.setItem('conqueror_rsWidth', String(widthRef.current));
+    }
     isResizing.current = false;
-    document.body.style.cursor = "default";
-    document.body.style.userSelect = "auto";
+    document.body.style.cursor = 'default';
+    document.body.style.userSelect = 'auto';
   }, []);
 
   const resize = useCallback((e: MouseEvent) => {
     if (isResizing.current) {
+      // The right sidebar is docked to the right edge.
+      // Its width is approximately window.innerWidth - current mouse X.
       const newWidth = window.innerWidth - e.clientX;
       if (newWidth >= 250 && newWidth <= 800) {
         setWidth(newWidth);
+        widthRef.current = newWidth;
       }
     }
   }, []);

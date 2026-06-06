@@ -35,7 +35,6 @@ export function TopicSection({
   return (
     <div className="content-body">
       <div style={{ marginBottom: "40px" }}>
-        <div className="topic-meta">{topic.phase}</div>
         <h1 className="topic-title">{topic.title}</h1>
       </div>
 

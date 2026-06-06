@@ -15,15 +15,46 @@ export default function Home() {
   const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(true);
 
   useEffect(() => {
-    if (syllabusData && syllabusData.length > 0) {
+    // Load persisted state
+    const savedTopic = localStorage.getItem('conqueror_activeTopic');
+    if (savedTopic && syllabusData.find(t => t.id === savedTopic)) {
+      setActiveTopicId(savedTopic);
+    } else if (syllabusData && syllabusData.length > 0) {
       setActiveTopicId(syllabusData[0].id);
     }
+
+    const savedSidebar = localStorage.getItem('conqueror_sidebarOpen');
+    const savedRightSidebar = localStorage.getItem('conqueror_rightSidebarOpen');
+
     // Mobile responsive: close sidebars by default on small screens
     if (typeof window !== 'undefined' && window.innerWidth <= 1024) {
       setIsSidebarOpen(false);
       setIsRightSidebarOpen(false);
+    } else {
+      if (savedSidebar !== null) setIsSidebarOpen(savedSidebar === 'true');
+      if (savedRightSidebar !== null) setIsRightSidebarOpen(savedRightSidebar === 'true');
     }
   }, []);
+
+  const handleTopicSelect = (id: string) => {
+    setActiveTopicId(id);
+    localStorage.setItem('conqueror_activeTopic', id);
+    if (typeof window !== 'undefined' && window.innerWidth <= 1024) {
+      setIsSidebarOpen(false);
+    }
+  };
+
+  const toggleSidebar = () => {
+    const newVal = !isSidebarOpen;
+    setIsSidebarOpen(newVal);
+    localStorage.setItem('conqueror_sidebarOpen', String(newVal));
+  };
+
+  const toggleRightSidebar = () => {
+    const newVal = !isRightSidebarOpen;
+    setIsRightSidebarOpen(newVal);
+    localStorage.setItem('conqueror_rightSidebarOpen', String(newVal));
+  };
 
   const activeTopic = syllabusData.find((t) => t.id === activeTopicId);
 
@@ -42,19 +73,19 @@ export default function Home() {
         <Sidebar 
           topics={syllabusData} 
           activeTopicId={activeTopicId} 
-          onTopicSelect={(id) => {
-            setActiveTopicId(id);
-            if (window.innerWidth <= 1024) setIsSidebarOpen(false);
-          }} 
+          onTopicSelect={handleTopicSelect} 
           completedProblems={completedProblems} 
-          onClose={() => setIsSidebarOpen(false)}
+          onClose={() => {
+            setIsSidebarOpen(false);
+            localStorage.setItem('conqueror_sidebarOpen', 'false');
+          }}
         />
       )}
       
       <div className="main-content">
         <div style={{ position: 'sticky', top: 0, padding: '24px 48px 0 48px', zIndex: 100, backgroundColor: 'var(--bg-main)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <button 
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)} 
+            onClick={toggleSidebar} 
             style={{ color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px', borderRadius: '6px', backgroundColor: 'var(--bg-hover)' }}
             title={isSidebarOpen ? "Hide Left Sidebar" : "Show Left Sidebar"}
           >
@@ -62,7 +93,7 @@ export default function Home() {
           </button>
           
           <button 
-            onClick={() => setIsRightSidebarOpen(!isRightSidebarOpen)} 
+            onClick={toggleRightSidebar} 
             style={{ color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px', borderRadius: '6px', backgroundColor: 'var(--bg-hover)' }}
             title={isRightSidebarOpen ? "Hide Problems" : "Show Problems"}
           >

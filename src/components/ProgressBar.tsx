@@ -4,19 +4,19 @@ interface ProgressBarProps {
 }
 
 export function ProgressBar({ completedCount, totalCount }: ProgressBarProps) {
-  const percentage = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
+  const percentage =
+    totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
 
   return (
     <div className="progress-container">
       <div className="progress-header">
-        <span>Mastery Progress</span>
-        <span>{completedCount} / {totalCount} ({percentage}%)</span>
+        <span>Progress</span>
+        <span>
+          {completedCount} / {totalCount} ({percentage}%)
+        </span>
       </div>
       <div className="progress-track">
-        <div 
-          className="progress-fill" 
-          style={{ width: `${percentage}%` }} 
-        />
+        <div className="progress-fill" style={{ width: `${percentage}%` }} />
       </div>
     </div>
   );
