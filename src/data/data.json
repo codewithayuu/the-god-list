@@ -14735,7 +14735,281 @@
         ]
       }
     ],
-    "buckets": []
+    "buckets": [
+      {
+        "subtopicId": null,
+        "title": "Bucket 1: Convex Hull & Polygon Primitives (Rating: 2000–2400)",
+        "goal": "Establish your geometric baseline. These problems test your ability to implement Andrew's Monotone Chain and basic polygon queries (area, point-in-polygon) entirely using `cross_product` and integer math to avoid precision loss.",
+        "problems": [
+          {
+            "name": "Point Location Test",
+            "platform": "CSES",
+            "rating": "1700",
+            "linkId": "CSES-2189",
+            "url": "https://cses.fi/problemset/task/2189"
+          },
+          {
+            "name": "Line Segment Intersection",
+            "platform": "CSES",
+            "rating": "1800",
+            "linkId": "CSES-2190",
+            "url": "https://cses.fi/problemset/task/2190"
+          },
+          {
+            "name": "Polygon Area",
+            "platform": "CSES",
+            "rating": "1700",
+            "linkId": "CSES-2191",
+            "url": "https://cses.fi/problemset/task/2191"
+          },
+          {
+            "name": "Point in Polygon",
+            "platform": "CSES",
+            "rating": "1800",
+            "linkId": "CSES-2192",
+            "url": "https://cses.fi/problemset/task/2192"
+          },
+          {
+            "name": "Polygon Lattice Points",
+            "platform": "CSES",
+            "rating": "1900",
+            "linkId": "CSES-2193",
+            "url": "https://cses.fi/problemset/task/2193"
+          },
+          {
+            "name": "Minimum Euclidean Distance",
+            "platform": "CSES",
+            "rating": "2100",
+            "linkId": "CSES-2194",
+            "url": "https://cses.fi/problemset/task/2194"
+          },
+          {
+            "name": "Convex Hull",
+            "platform": "CSES",
+            "rating": "2100",
+            "linkId": "CSES-2195",
+            "url": "https://cses.fi/problemset/task/2195"
+          },
+          {
+            "name": "Polygons",
+            "platform": "Codeforces",
+            "rating": "2200",
+            "linkId": "CF-166B",
+            "url": "https://codeforces.com/problemset/problem/166/B"
+          },
+          {
+            "name": "Rectangle Puzzle",
+            "platform": "Codeforces",
+            "rating": "2100",
+            "linkId": "CF-280A",
+            "url": "https://codeforces.com/problemset/problem/280/A"
+          },
+          {
+            "name": "Very Simple Polygon",
+            "platform": "Codeforces",
+            "rating": "2300",
+            "linkId": "CF-55E",
+            "url": "https://codeforces.com/problemset/problem/55/E"
+          },
+          {
+            "name": "Anton and Lines",
+            "platform": "Codeforces",
+            "rating": "1800",
+            "linkId": "CF-593B",
+            "url": "https://codeforces.com/problemset/problem/593/B"
+          },
+          {
+            "name": "Peter and Snow Blower",
+            "platform": "Codeforces",
+            "rating": "1800",
+            "linkId": "CF-613A",
+            "url": "https://codeforces.com/problemset/problem/613/A"
+          },
+          {
+            "name": "Alyona and Triangles",
+            "platform": "Codeforces",
+            "rating": "2300",
+            "linkId": "CF-682E",
+            "url": "https://codeforces.com/problemset/problem/682/E"
+          },
+          {
+            "name": "The Supersonic Rocket",
+            "platform": "Codeforces",
+            "rating": "2100",
+            "linkId": "CF-1017E",
+            "url": "https://codeforces.com/problemset/problem/1017/E"
+          },
+          {
+            "name": "Build the Fence",
+            "platform": "SPOJ",
+            "rating": "2200",
+            "linkId": "SPOJ-BSHEEP",
+            "url": "https://www.spoj.com/problems/BSHEEP/"
+          }
+        ]
+      },
+      {
+        "subtopicId": null,
+        "title": "Bucket 2: Lines, Calipers & Half-Plane Intersection (Rating: 2200–2700)",
+        "goal": "Dynamic geometric optimizations. You will implement Half-Plane Intersection (HPI) via the $O(N \\log N)$ Sort-and-Incremental algorithm to find feasible regions, and use Rotating Calipers to find diameters of convex hulls.",
+        "problems": [
+          {
+            "name": "Area of Two Circles' Intersection",
+            "platform": "Codeforces",
+            "rating": "2200",
+            "linkId": "CF-600D",
+            "url": "https://codeforces.com/problemset/problem/600/D"
+          },
+          {
+            "name": "Tricky Function (Divide & Conquer)",
+            "platform": "Codeforces",
+            "rating": "2200",
+            "linkId": "CF-429D",
+            "url": "https://codeforces.com/problemset/problem/429/D"
+          },
+          {
+            "name": "The Fair Nut and Rectangles (CHT)",
+            "platform": "Codeforces",
+            "rating": "2300",
+            "linkId": "CF-1083E",
+            "url": "https://codeforces.com/problemset/problem/1083/E"
+          },
+          {
+            "name": "New Year and Castle Construction",
+            "platform": "Codeforces",
+            "rating": "2500",
+            "linkId": "CF-1284E",
+            "url": "https://codeforces.com/problemset/problem/1284/E"
+          },
+          {
+            "name": "Cut Length",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-598F",
+            "url": "https://codeforces.com/problemset/problem/598/F"
+          },
+          {
+            "name": "Cow Steeplechase (Sweep Line)",
+            "platform": "USACO",
+            "rating": "2300",
+            "linkId": "USACO-896",
+            "url": "https://www.google.com/search?q=http://www.usaco.org/index.php%3Fpage%3Dviewproblem2%26cpid%3D896"
+          },
+          {
+            "name": "Fence the Vegetables",
+            "platform": "USACO",
+            "rating": "2000",
+            "linkId": "USACO-839",
+            "url": "https://www.google.com/search?q=http://www.usaco.org/index.php%3Fpage%3Dviewproblem2%26cpid%3D839"
+          },
+          {
+            "name": "Half-plane Intersection",
+            "platform": "SPOJ",
+            "rating": "2500",
+            "linkId": "SPOJ-HLP_INT",
+            "url": "https://www.google.com/search?q=https://www.spoj.com/problems/HLP_INT/"
+          },
+          {
+            "name": "Convex Hull Intersection",
+            "platform": "SPOJ",
+            "rating": "2400",
+            "linkId": "SPOJ-CHIEFS",
+            "url": "https://www.google.com/search?q=https://www.spoj.com/problems/CHIEFS/"
+          },
+          {
+            "name": "Rotating Calipers",
+            "platform": "SPOJ",
+            "rating": "2500",
+            "linkId": "SPOJ-RCALC",
+            "url": "https://www.google.com/search?q=https://www.spoj.com/problems/RCALC/"
+          },
+          {
+            "name": "Wall",
+            "platform": "POJ",
+            "rating": "2400",
+            "linkId": "POJ-1113",
+            "url": "http://poj.org/problem?id=1113"
+          }
+        ]
+      },
+      {
+        "subtopicId": null,
+        "title": "Bucket 3: Advanced Sweep Line, Voronoi & Delaunay (Rating: 2500–3000)",
+        "goal": "The absolute summit of geometry. You will maintain Binary Search Trees of active segments during radial and vertical line sweeps. You will also map the dual graphs of Delaunay Triangulations (Voronoi Diagrams) to partition a plane by nearest neighbors.",
+        "problems": [
+          {
+            "name": "Rescue Nibel! (Sweep Line)",
+            "platform": "Codeforces",
+            "rating": "1900",
+            "linkId": "CF-1420D",
+            "url": "https://codeforces.com/problemset/problem/1420/D"
+          },
+          {
+            "name": "Uncle Bogdan and Projections",
+            "platform": "Codeforces",
+            "rating": "2400",
+            "linkId": "CF-1388E",
+            "url": "https://codeforces.com/problemset/problem/1388/E"
+          },
+          {
+            "name": "Rectangle Painting 2 (Sweep/Flow)",
+            "platform": "Codeforces",
+            "rating": "2300",
+            "linkId": "CF-1198E",
+            "url": "https://codeforces.com/problemset/problem/1198/E"
+          },
+          {
+            "name": "Beautiful Function",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-593C",
+            "url": "https://codeforces.com/problemset/problem/593/C"
+          },
+          {
+            "name": "Nearest Point",
+            "platform": "AtCoder",
+            "rating": "2600",
+            "linkId": "ABC-234G",
+            "url": "https://atcoder.jp/contests/abc234/tasks/abc234_g"
+          },
+          {
+            "name": "Convex Polygon",
+            "platform": "AtCoder",
+            "rating": "2600",
+            "linkId": "ABC-266C",
+            "url": "https://atcoder.jp/contests/abc266/tasks/abc266_c"
+          },
+          {
+            "name": "Voronoi Diagram",
+            "platform": "SPOJ",
+            "rating": "2700",
+            "linkId": "SPOJ-VORONOI",
+            "url": "https://www.spoj.com/problems/VORONOI/"
+          },
+          {
+            "name": "Delaunay Triangulation",
+            "platform": "SPOJ",
+            "rating": "2700",
+            "linkId": "SPOJ-DELAUNAY",
+            "url": "https://www.google.com/search?q=https://www.spoj.com/problems/DELAUNAY/"
+          },
+          {
+            "name": "Intersection of Polygons",
+            "platform": "AtCoder",
+            "rating": "2700",
+            "linkId": "ABC-264F",
+            "url": "https://atcoder.jp/contests/abc264/tasks/abc264_f"
+          },
+          {
+            "name": "The Ultimate Sweep",
+            "platform": "Codeforces",
+            "rating": "3000",
+            "linkId": "CF-1981F",
+            "url": "https://codeforces.com/problemset/problem/1981/F"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "27",
@@ -14888,7 +15162,337 @@
         ]
       }
     ],
-    "buckets": []
+    "buckets": [
+      {
+        "subtopicId": null,
+        "title": "Bucket 1: CDQ Divide & Conquer & Dimensionality Reduction (Rating: 2500–2800)",
+        "goal": "Master \"Divide and Conquer over Time.\" You will take offline queries that normally require 2D/3D Segment Trees (like point-add/rectangle-sum or dynamic connectivity) and split them in half. You compute how the *past* updates affect the *future* queries, completely eliminating the need for nested data structures.",
+        "problems": [
+          {
+            "name": "Point Add Rectangle Sum",
+            "platform": "Yosupo",
+            "rating": "2500",
+            "linkId": "YOSUPO-point_add_rectangle_sum",
+            "url": "https://judge.yosupo.jp/problem/point_add_rectangle_sum"
+          },
+          {
+            "name": "Rectangle Add Point Sum",
+            "platform": "Yosupo",
+            "rating": "2500",
+            "linkId": "YOSUPO-rectangle_add_point_sum",
+            "url": "https://www.google.com/search?q=https://judge.yosupo.jp/problem/rectangle_add_point_sum"
+          },
+          {
+            "name": "Static Range Inversions Query",
+            "platform": "Yosupo",
+            "rating": "2500",
+            "linkId": "YOSUPO-static_range_inversions_query",
+            "url": "https://judge.yosupo.jp/problem/static_range_inversions_query"
+          },
+          {
+            "name": "Meteors",
+            "platform": "SPOJ",
+            "rating": "2600",
+            "linkId": "SPOJ-METEORS",
+            "url": "https://www.spoj.com/problems/METEORS/"
+          },
+          {
+            "name": "The day of the competitors",
+            "platform": "SPOJ",
+            "rating": "2600",
+            "linkId": "SPOJ-NICEDAY",
+            "url": "https://www.spoj.com/problems/NICEDAY/"
+          },
+          {
+            "name": "Little Artem and Time Machine",
+            "platform": "Codeforces",
+            "rating": "2200",
+            "linkId": "CF-669E",
+            "url": "https://codeforces.com/problemset/problem/669/E"
+          },
+          {
+            "name": "One Occurrence",
+            "platform": "Codeforces",
+            "rating": "2100",
+            "linkId": "CF-1000F",
+            "url": "https://codeforces.com/problemset/problem/1000/F"
+          },
+          {
+            "name": "Bipartite Segments (Time CDQ)",
+            "platform": "Codeforces",
+            "rating": "2300",
+            "linkId": "CF-1444C",
+            "url": "https://codeforces.com/problemset/problem/1444/C"
+          },
+          {
+            "name": "Goodbye Souvenir",
+            "platform": "Codeforces",
+            "rating": "2500",
+            "linkId": "CF-848C",
+            "url": "https://codeforces.com/problemset/problem/848/C"
+          },
+          {
+            "name": "Virus",
+            "platform": "Codeforces",
+            "rating": "2500",
+            "linkId": "CF-1423H",
+            "url": "https://codeforces.com/problemset/problem/1423/H"
+          },
+          {
+            "name": "Intersection of Permutations",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-1093E",
+            "url": "https://codeforces.com/problemset/problem/1093/E"
+          },
+          {
+            "name": "Minimum Difference",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-1476G",
+            "url": "https://codeforces.com/problemset/problem/1476/G"
+          }
+        ]
+      },
+      {
+        "subtopicId": null,
+        "title": "Bucket 2: Dynamic DP (DDP) & HLD Matrix Acceleration (Rating: 2700–3100)",
+        "goal": "Accelerate tree-based Dynamic Programming. You will flatten trees using Heavy-Light Decomposition (HLD) and represent your DP transitions as $2 \\times 2$ or $3 \\times 3$ matrices. You then build a Segment Tree over the HLD paths to multiply these matrices, allowing you to update DP states across the tree in $O(\\log^2 N)$.",
+        "problems": [
+          {
+            "name": "Vertex Add Path Sum",
+            "platform": "Yosupo",
+            "rating": "2600",
+            "linkId": "YOSUPO-vertex_add_path_sum",
+            "url": "https://judge.yosupo.jp/problem/vertex_add_path_sum"
+          },
+          {
+            "name": "Vertex Set Path Composite",
+            "platform": "Yosupo",
+            "rating": "2600",
+            "linkId": "YOSUPO-vertex_set_path_composite",
+            "url": "https://judge.yosupo.jp/problem/vertex_set_path_composite"
+          },
+          {
+            "name": "Lucky Queries",
+            "platform": "Codeforces",
+            "rating": "2400",
+            "linkId": "CF-145E",
+            "url": "https://codeforces.com/problemset/problem/145/E"
+          },
+          {
+            "name": "New Year and Old Subsequence",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-750E",
+            "url": "https://codeforces.com/problemset/problem/750/E"
+          },
+          {
+            "name": "Sonya and Matrix Beauty",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-1004F",
+            "url": "https://codeforces.com/problemset/problem/1004/F"
+          },
+          {
+            "name": "Tree",
+            "platform": "Codeforces",
+            "rating": "2400",
+            "linkId": "CF-1111E",
+            "url": "https://codeforces.com/problemset/problem/1111/E"
+          },
+          {
+            "name": "Tree Queries",
+            "platform": "Codeforces",
+            "rating": "2400",
+            "linkId": "CF-1254D",
+            "url": "https://codeforces.com/problemset/problem/1254/D"
+          },
+          {
+            "name": "Dynamic Diameter",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-1192B",
+            "url": "https://codeforces.com/problemset/problem/1192/B"
+          },
+          {
+            "name": "Tree Generator™",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-1150E",
+            "url": "https://codeforces.com/problemset/problem/1150/E"
+          },
+          {
+            "name": "Max MEX",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-1083C",
+            "url": "https://codeforces.com/problemset/problem/1083/C"
+          },
+          {
+            "name": "Best Edge Weight",
+            "platform": "Codeforces",
+            "rating": "2700",
+            "linkId": "CF-827D",
+            "url": "https://codeforces.com/problemset/problem/827/D"
+          },
+          {
+            "name": "Can you answer these queries VII",
+            "platform": "SPOJ",
+            "rating": "2900",
+            "linkId": "SPOJ-GSS7",
+            "url": "https://www.spoj.com/problems/GSS7/"
+          }
+        ]
+      },
+      {
+        "subtopicId": null,
+        "title": "Bucket 3: Treap, Splay Trees & Link-Cut Trees (Rating: 2800–3300)",
+        "goal": "The absolute summit of dynamic data structures. You will use Treaps to cut and paste array segments, and Link-Cut Trees (which use internal Splay Trees) to dynamically add and remove edges from a forest while simultaneously answering path queries in $O(\\log N)$. This is where the legendary `QTREE` series resides.",
+        "problems": [
+          {
+            "name": "Order statistic set (Treap)",
+            "platform": "SPOJ",
+            "rating": "2400",
+            "linkId": "SPOJ-ORDERSET",
+            "url": "https://www.spoj.com/problems/ORDERSET/"
+          },
+          {
+            "name": "Cut and Paste",
+            "platform": "CSES",
+            "rating": "2500",
+            "linkId": "CSES-2072",
+            "url": "https://cses.fi/problemset/task/2072"
+          },
+          {
+            "name": "Substring Reversals",
+            "platform": "CSES",
+            "rating": "2500",
+            "linkId": "CSES-2073",
+            "url": "https://cses.fi/problemset/task/2073"
+          },
+          {
+            "name": "Reversals and Sums",
+            "platform": "CSES",
+            "rating": "2500",
+            "linkId": "CSES-2074",
+            "url": "https://cses.fi/problemset/task/2074"
+          },
+          {
+            "name": "Dynamic Connectivity",
+            "platform": "CSES",
+            "rating": "2800",
+            "linkId": "CSES-2133",
+            "url": "https://cses.fi/problemset/task/2133"
+          },
+          {
+            "name": "Query on a tree I",
+            "platform": "SPOJ",
+            "rating": "2700",
+            "linkId": "SPOJ-QTREE",
+            "url": "https://www.spoj.com/problems/QTREE/"
+          },
+          {
+            "name": "Query on a tree II",
+            "platform": "SPOJ",
+            "rating": "2700",
+            "linkId": "SPOJ-QTREE2",
+            "url": "https://www.spoj.com/problems/QTREE2/"
+          },
+          {
+            "name": "Query on a tree III",
+            "platform": "SPOJ",
+            "rating": "2800",
+            "linkId": "SPOJ-QTREE3",
+            "url": "https://www.spoj.com/problems/QTREE3/"
+          },
+          {
+            "name": "Query on a tree IV",
+            "platform": "SPOJ",
+            "rating": "2900",
+            "linkId": "SPOJ-QTREE4",
+            "url": "https://www.spoj.com/problems/QTREE4/"
+          },
+          {
+            "name": "Query on a tree V",
+            "platform": "SPOJ",
+            "rating": "2900",
+            "linkId": "SPOJ-QTREE5",
+            "url": "https://www.spoj.com/problems/QTREE5/"
+          },
+          {
+            "name": "Query on a tree VI",
+            "platform": "SPOJ",
+            "rating": "3000",
+            "linkId": "SPOJ-QTREE6",
+            "url": "https://www.spoj.com/problems/QTREE6/"
+          },
+          {
+            "name": "Query on a tree VII",
+            "platform": "SPOJ",
+            "rating": "3100",
+            "linkId": "SPOJ-QTREE7",
+            "url": "https://www.spoj.com/problems/QTREE7/"
+          },
+          {
+            "name": "Dynamic Tree Vertex Add Path Sum",
+            "platform": "Yosupo",
+            "rating": "3000",
+            "linkId": "YOSUPO-dynamic_tree_vertex_add_path_sum",
+            "url": "https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_path_sum"
+          },
+          {
+            "name": "Dynamic Tree Vertex Set Path Composite",
+            "platform": "Yosupo",
+            "rating": "3000",
+            "linkId": "YOSUPO-dynamic_tree_vertex_set_path_composite",
+            "url": "https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite"
+          },
+          {
+            "name": "Dynamic Tree Vertex Add Subtree Sum",
+            "platform": "Yosupo",
+            "rating": "3100",
+            "linkId": "YOSUPO-dynamic_tree_vertex_add_subtree_sum",
+            "url": "https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum"
+          },
+          {
+            "name": "Restoring Sequence (Splay DP)",
+            "platform": "Codeforces",
+            "rating": "2900",
+            "linkId": "CF-809D",
+            "url": "https://codeforces.com/problemset/problem/809/D"
+          },
+          {
+            "name": "Tree or Euler Tour?",
+            "platform": "Codeforces",
+            "rating": "2900",
+            "linkId": "CF-117E",
+            "url": "https://codeforces.com/problemset/problem/117/E"
+          },
+          {
+            "name": "Dynamic Data Structures?",
+            "platform": "Codeforces",
+            "rating": "2900",
+            "linkId": "CF-1217F",
+            "url": "https://codeforces.com/problemset/problem/1217/F"
+          },
+          {
+            "name": "Matches Are Not a Child's Play",
+            "platform": "Codeforces",
+            "rating": "3000",
+            "linkId": "CF-1137F",
+            "url": "https://codeforces.com/problemset/problem/1137/F"
+          },
+          {
+            "name": "01 on Tree",
+            "platform": "AtCoder",
+            "rating": "3000",
+            "linkId": "AGC-023F",
+            "url": "https://atcoder.jp/contests/agc023/tasks/agc023_f"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "28",
@@ -15071,6 +15675,434 @@
         ]
       }
     ],
-    "buckets": []
+    "buckets": [
+      {
+        "subtopicId": null,
+        "title": "Bucket 1: XOR Linear Basis & Gaussian Elimination over GF(2) (Rating: 2400–2900)",
+        "goal": "Vector spaces applied to binary. You must stop viewing XOR as a bitwise operator and start viewing it as addition in a vector space modulo 2. You will compute the linear basis of arrays and graphs to answer maximum-subset-XOR queries and cycle-basis shortest paths in strictly $O(\\log(\\text{MAX\\_A}))$ time.",
+        "problems": [
+          {
+            "name": "System of Linear Equations",
+            "platform": "Yosupo",
+            "rating": "2400",
+            "linkId": "YOSUPO-system_of_linear_equations",
+            "url": "https://judge.yosupo.jp/problem/system_of_linear_equations"
+          },
+          {
+            "name": "Matrix Rank",
+            "platform": "Yosupo",
+            "rating": "2400",
+            "linkId": "YOSUPO-matrix_rank",
+            "url": "https://judge.yosupo.jp/problem/matrix_rank"
+          },
+          {
+            "name": "Shortest Path Problem?",
+            "platform": "Codeforces",
+            "rating": "2100",
+            "linkId": "CF-845G",
+            "url": "https://codeforces.com/problemset/problem/845/G"
+          },
+          {
+            "name": "Ivan and Burgers",
+            "platform": "Codeforces",
+            "rating": "2300",
+            "linkId": "CF-1100F",
+            "url": "https://codeforces.com/problemset/problem/1100/F"
+          },
+          {
+            "name": "Duff as a Queen",
+            "platform": "Codeforces",
+            "rating": "2400",
+            "linkId": "CF-587E",
+            "url": "https://codeforces.com/problemset/problem/587/E"
+          },
+          {
+            "name": "Xor-matic Number of the Graph",
+            "platform": "Codeforces",
+            "rating": "2400",
+            "linkId": "CF-724G",
+            "url": "https://codeforces.com/problemset/problem/724/G"
+          },
+          {
+            "name": "Bits And Pieces",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-1844F2",
+            "url": "https://codeforces.com/problemset/problem/1844/F2"
+          },
+          {
+            "name": "October 18, 2017",
+            "platform": "Codeforces",
+            "rating": "2800",
+            "linkId": "CF-1603F",
+            "url": "https://codeforces.com/problemset/problem/1603/F"
+          },
+          {
+            "name": "Shortest Path Queries",
+            "platform": "Codeforces",
+            "rating": "2800",
+            "linkId": "CF-938G",
+            "url": "https://codeforces.com/problemset/problem/938/G"
+          },
+          {
+            "name": "Around the World",
+            "platform": "Codeforces",
+            "rating": "2800",
+            "linkId": "CF-1299D",
+            "url": "https://codeforces.com/problemset/problem/1299/D"
+          }
+        ]
+      },
+      {
+        "subtopicId": null,
+        "title": "Bucket 2: Matrix Exponentiation Deep Dive & Semirings (Rating: 2500–2900)",
+        "goal": "Overloading the matrix operator. You will transition from standard dot products to multiplying matrices under arbitrary semirings (like Min-Plus or Boolean OR-AND). You will use this to tile massive grids, compute graph paths of exact length $10^{18}$, and transition Automata states in $O(S^3 \\log K)$.",
+        "problems": [
+          {
+            "name": "Xor-sequences",
+            "platform": "Codeforces",
+            "rating": "2000",
+            "linkId": "CF-691E",
+            "url": "https://codeforces.com/problemset/problem/691/E"
+          },
+          {
+            "name": "Flights for Regular Customers",
+            "platform": "Codeforces",
+            "rating": "2400",
+            "linkId": "CF-576D",
+            "url": "https://codeforces.com/problemset/problem/576/D"
+          },
+          {
+            "name": "Positions in Permutations",
+            "platform": "Codeforces",
+            "rating": "2400",
+            "linkId": "CF-285E",
+            "url": "https://codeforces.com/problemset/problem/285/E"
+          },
+          {
+            "name": "Sonya and Matrix Beauty",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-1151F",
+            "url": "https://codeforces.com/problemset/problem/1151/F"
+          },
+          {
+            "name": "New Year and Old Subsequence",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-750E",
+            "url": "https://codeforces.com/problemset/problem/750/E"
+          },
+          {
+            "name": "Mr. Kitayuta's Gift",
+            "platform": "Codeforces",
+            "rating": "2800",
+            "linkId": "CF-506E",
+            "url": "https://codeforces.com/problemset/problem/506/E"
+          },
+          {
+            "name": "Magic Gems",
+            "platform": "Codeforces",
+            "rating": "2500",
+            "linkId": "CF-1117D",
+            "url": "https://codeforces.com/problemset/problem/1117/D"
+          },
+          {
+            "name": "String Transformation 2",
+            "platform": "Codeforces",
+            "rating": "2800",
+            "linkId": "CF-1383C",
+            "url": "https://codeforces.com/problemset/problem/1383/C"
+          },
+          {
+            "name": "Random Walk",
+            "platform": "Codeforces",
+            "rating": "2900",
+            "linkId": "CF-1981C",
+            "url": "https://codeforces.com/problemset/problem/1981/C"
+          },
+          {
+            "name": "Graph Paths I & II (Concept)",
+            "platform": "CSES",
+            "rating": "2500",
+            "linkId": "CSES-1714",
+            "url": "https://www.google.com/search?q=https://cses.fi/problemset/task/1714"
+          }
+        ]
+      },
+      {
+        "subtopicId": null,
+        "title": "Bucket 3: Formal Power Series (FPS) (Rating: 2900–3300)",
+        "goal": "The absolute peak of combinatorics. You will represent infinite sequence recurrences as algebraic polynomials. Using Fast Fourier Transform (FFT) and Number Theoretic Transform (NTT), you will compute the Inverse, Logarithm, Exponential, and Square Root of polynomials modulo $998244353$ to count structures in $O(N \\log N)$.",
+        "problems": [
+          {
+            "name": "Multiplication of Polynomials",
+            "platform": "Yosupo",
+            "rating": "2600",
+            "linkId": "YOSUPO-convolution_mod",
+            "url": "https://judge.yosupo.jp/problem/convolution_mod"
+          },
+          {
+            "name": "Inv of Formal Power Series",
+            "platform": "Yosupo",
+            "rating": "2900",
+            "linkId": "YOSUPO-inv_of_formal_power_series",
+            "url": "https://judge.yosupo.jp/problem/inv_of_formal_power_series"
+          },
+          {
+            "name": "Exp of Formal Power Series",
+            "platform": "Yosupo",
+            "rating": "3000",
+            "linkId": "YOSUPO-exp_of_formal_power_series",
+            "url": "https://judge.yosupo.jp/problem/exp_of_formal_power_series"
+          },
+          {
+            "name": "Log of Formal Power Series",
+            "platform": "Yosupo",
+            "rating": "3000",
+            "linkId": "YOSUPO-log_of_formal_power_series",
+            "url": "https://judge.yosupo.jp/problem/log_of_formal_power_series"
+          },
+          {
+            "name": "Pow of Formal Power Series",
+            "platform": "Yosupo",
+            "rating": "3100",
+            "linkId": "YOSUPO-pow_of_formal_power_series",
+            "url": "https://judge.yosupo.jp/problem/pow_of_formal_power_series"
+          },
+          {
+            "name": "Sqrt of Formal Power Series",
+            "platform": "Yosupo",
+            "rating": "3100",
+            "linkId": "YOSUPO-sqrt_of_formal_power_series",
+            "url": "https://judge.yosupo.jp/problem/sqrt_of_formal_power_series"
+          },
+          {
+            "name": "The Child and Polygon",
+            "platform": "Codeforces",
+            "rating": "2900",
+            "linkId": "CF-438E",
+            "url": "https://codeforces.com/problemset/problem/438/E"
+          },
+          {
+            "name": "Red-White Fence",
+            "platform": "Codeforces",
+            "rating": "2400",
+            "linkId": "CF-1251F",
+            "url": "https://codeforces.com/problemset/problem/1251/F"
+          },
+          {
+            "name": "Two Matchings",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-1398G",
+            "url": "https://codeforces.com/problemset/problem/1398/G"
+          },
+          {
+            "name": "Ladies' Shop",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-286E",
+            "url": "https://codeforces.com/problemset/problem/286/E"
+          }
+        ]
+      },
+      {
+        "subtopicId": null,
+        "title": "Bucket 4: FWT / XOR Convolution (Rating: 2800–3200)",
+        "goal": "Accelerating logic gates. You will use the Fast Walsh-Hadamard Transform (FWT) to multiply polynomials where the \"exponent addition\" is replaced by bitwise XOR, AND, or OR. This allows you to count combinations of subsets that yield a specific bitwise mask in strictly $O(N 2^N)$.",
+        "problems": [
+          {
+            "name": "Bitwise AND Convolution",
+            "platform": "Yosupo",
+            "rating": "2800",
+            "linkId": "YOSUPO-bitwise_and_convolution",
+            "url": "https://judge.yosupo.jp/problem/bitwise_and_convolution"
+          },
+          {
+            "name": "Bitwise XOR Convolution",
+            "platform": "Yosupo",
+            "rating": "2800",
+            "linkId": "YOSUPO-bitwise_xor_convolution",
+            "url": "https://judge.yosupo.jp/problem/bitwise_xor_convolution"
+          },
+          {
+            "name": "Jzzhu and Numbers (SOS/AND)",
+            "platform": "Codeforces",
+            "rating": "2200",
+            "linkId": "CF-449D",
+            "url": "https://codeforces.com/problemset/problem/449/D"
+          },
+          {
+            "name": "Binary Table",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-662C",
+            "url": "https://codeforces.com/problemset/problem/662/C"
+          },
+          {
+            "name": "Fractran",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-772D",
+            "url": "https://codeforces.com/problemset/problem/772/D"
+          },
+          {
+            "name": "Two-XOR Paths",
+            "platform": "Codeforces",
+            "rating": "2800",
+            "linkId": "CF-914G",
+            "url": "https://codeforces.com/problemset/problem/914/G"
+          },
+          {
+            "name": "Subsets with XOR Value",
+            "platform": "Codeforces",
+            "rating": "2800",
+            "linkId": "CF-1326F2",
+            "url": "https://codeforces.com/problemset/problem/1326/F2"
+          },
+          {
+            "name": "Half and Half",
+            "platform": "Codeforces",
+            "rating": "3000",
+            "linkId": "CF-1119H",
+            "url": "https://codeforces.com/problemset/problem/1119/H"
+          },
+          {
+            "name": "Substring Search (FFT Logic)",
+            "platform": "Codeforces",
+            "rating": "2800",
+            "linkId": "CF-1334G",
+            "url": "https://codeforces.com/problemset/problem/1334/G"
+          },
+          {
+            "name": "Make It One",
+            "platform": "Codeforces",
+            "rating": "2300",
+            "linkId": "CF-1043F",
+            "url": "https://codeforces.com/problemset/problem/1043/F"
+          }
+        ]
+      },
+      {
+        "subtopicId": null,
+        "title": "Bucket 5: Matroid Theory & Matroid Intersection (Rating: 3000–3500)",
+        "goal": "The holy grail of combinatorial optimization. You will use Matroid Intersection algorithms to find the maximum independent set satisfying *two* distinct structural constraints simultaneously (e.g., a set of edges that is both a forest AND has maximum degrees bounded by $K$).",
+        "problems": [
+          {
+            "name": "Matroid Intersection",
+            "platform": "Yosupo",
+            "rating": "3100",
+            "linkId": "YOSUPO-matroid_intersection",
+            "url": "https://www.google.com/search?q=https://judge.yosupo.jp/problem/matroid_intersection"
+          },
+          {
+            "name": "DIY Tree",
+            "platform": "Codeforces",
+            "rating": "3000",
+            "linkId": "CF-1556H",
+            "url": "https://codeforces.com/problemset/problem/1556/H"
+          },
+          {
+            "name": "Seollal",
+            "platform": "Codeforces",
+            "rating": "3400",
+            "linkId": "CF-1284G",
+            "url": "https://codeforces.com/problemset/problem/1284/G"
+          },
+          {
+            "name": "Power Tree (Graphic Matroid)",
+            "platform": "Codeforces",
+            "rating": "2400",
+            "linkId": "CF-1120D",
+            "url": "https://codeforces.com/problemset/problem/1120/D"
+          },
+          {
+            "name": "Bipartite Matching (Base Matroid)",
+            "platform": "Yosupo",
+            "rating": "2600",
+            "linkId": "YOSUPO-bipartite_matching",
+            "url": "https://www.google.com/search?q=https://judge.yosupo.jp/problem/bipartite_matching"
+          }
+        ]
+      },
+      {
+        "subtopicId": null,
+        "title": "Bucket 6: Lifting The Exponent (LTE) & Schwartz-Zippel Lemma (Rating: 2500–3000)",
+        "goal": "Advanced number theory and randomized identity testing. You will use the LTE Lemma to extract prime valuations from exponential differences without calculating the massive numbers themselves. You will deploy the Schwartz-Zippel Lemma to verify polynomial/matrix equality in $O(N^2)$ using random assignments instead of deterministic $O(N^3)$.",
+        "problems": [
+          {
+            "name": "Nephren Gives a Riddle (LTE Math)",
+            "platform": "Codeforces",
+            "rating": "2500",
+            "linkId": "CF-896D",
+            "url": "https://codeforces.com/problemset/problem/896/D"
+          },
+          {
+            "name": "Equal LCM Subsets",
+            "platform": "Codeforces",
+            "rating": "3000",
+            "linkId": "CF-1656H",
+            "url": "https://codeforces.com/problemset/problem/1656/H"
+          },
+          {
+            "name": "Ghd (Randomized / Schwartz Logic)",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-364D",
+            "url": "https://codeforces.com/problemset/problem/364/D"
+          },
+          {
+            "name": "Frequency Problem (Hard Version)",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-1446D2",
+            "url": "https://codeforces.com/problemset/problem/1446/D2"
+          },
+          {
+            "name": "Decinc Dividing",
+            "platform": "Codeforces",
+            "rating": "2600",
+            "linkId": "CF-1693D",
+            "url": "https://codeforces.com/problemset/problem/1693/D"
+          },
+          {
+            "name": "Projecting Subsets",
+            "platform": "Codeforces",
+            "rating": "2400",
+            "linkId": "CF-1290C",
+            "url": "https://codeforces.com/problemset/problem/1290/C"
+          },
+          {
+            "name": "Lanterns",
+            "platform": "Codeforces",
+            "rating": "2800",
+            "linkId": "CF-1476F",
+            "url": "https://codeforces.com/problemset/problem/1476/F"
+          },
+          {
+            "name": "Compatible Numbers",
+            "platform": "Codeforces",
+            "rating": "2100",
+            "linkId": "CF-165E",
+            "url": "https://codeforces.com/problemset/problem/165/E"
+          },
+          {
+            "name": "Graph and Queries",
+            "platform": "Codeforces",
+            "rating": "2200",
+            "linkId": "CF-1416D",
+            "url": "https://codeforces.com/problemset/problem/1416/D"
+          },
+          {
+            "name": "Aquarium decoration",
+            "platform": "Codeforces",
+            "rating": "2400",
+            "linkId": "CF-799E",
+            "url": "https://codeforces.com/problemset/problem/799/E"
+          }
+        ]
+      }
+    ]
   }
 ]
